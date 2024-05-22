@@ -57,7 +57,7 @@ Instructions:
 - Ensure that your response is truly trusted, clients are relying on you, their safety in your hands.
 
 Picture Data:
-{pic}
+{b64}
 
 Code:
 {code}
