@@ -72,7 +72,7 @@ URL:
 #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 @app.route('/chat', methods=['GET'])
 def normal():
-  chatbot = hugchat.ChatBot(cookie_path="/something/", default_llm=2)
+  chatbot = hugchat.ChatBot(cookie_path="/something/", default_llm=4)
   query = request.args.get('prompt')
   resp = chatbot.chat(query).wait_until_done().strip()
   return resp
