@@ -17,5 +17,9 @@ def normal():
   query = request.args.get('prompt')
   resp = chatbot.chat(query).wait_until_done().strip()
   return resp
+@app.route("/ok",methods=["GET"]):
+def s():
+  ok = "ok"
+  return ok
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000)
