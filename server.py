@@ -6,14 +6,14 @@ app = Flask(__name__)
 
 @app.route('/chat', methods=['POST'])
 def receive():
-  chatbot = hugchat.ChatBot(cookie_path="/something/")
+  chatbot = hugchat.ChatBot(cookie_path="/something/", default_llm=2)
   d = request.json
   query = d.get('prompt')
   resp = chatbot.chat(query).wait_until_done().strip()
   return resp
 @app.route('/chat', methods=['GET'])
 def normal():
-  chatbot = hugchat.ChatBot(cookie_path="/something/")
+  chatbot = hugchat.ChatBot(cookie_path="/something/", default_llm=2)
   query = request.args.get('prompt')
   resp = chatbot.chat(query).wait_until_done().strip()
   return resp
